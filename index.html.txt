@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goood Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+        header {
+            background: #ffffff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        header h1 { margin: 0; font-size: 30px; }
+
+        .hero {
+            background: #eef3ff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .hero h2 { margin: 0; font-size: 32px; }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin: 40px 0 20px;
+        }
+
+        /* PRODUCT GRID */
+        .products {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            height: 220px;
+            object-fit: cover;
+        }
+        .product h4 { margin: 10px 0 5px; }
+        .product p { color: #555; }
+        .product button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #4c8bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* ORDER FORM */
+        #orderForm {
+            max-width: 450px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+        #orderForm input, #orderForm select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        #orderForm button {
+            width: 100%;
+            padding: 12px;
+            background: #4c8bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .contact a {
+            margin: 10px;
+            padding: 12px 20px;
+            background: #4c8bff;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #666;
+        }
+    </style>
+
+    <script>
+        function order(productName) {
+            document.getElementById("orderForm").style.display = "block";
+            document.getElementById("product").value = productName;
+            window.scrollTo(0, document.getElementById("orderForm").offsetTop);
+        }
+
+        function submitOrder() {
+            alert("تم إرسال الطلب بنجاح! سنتواصل معك قريباً.");
+        }
+    </script>
+</head>
+
+<body>
+
+<header>
+    <h1>Goood Store</h1>
+</header>
+
+<section class="hero">
+    <h2>مرحبا بكم في متجر Goood Store</h2>
+    <p>أفضل المنتجات الحديثة وبأفضل الأسعار</p>
+</section>
+
+<h3 class="section-title">منتجاتنا</h3>
+
+<section class="products">
+
+    <!-- PRODUCT 1 -->
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1589307004173-3c95204d30ff?w=600" />
+        <h4>SmartBlend Pro</h4>
+        <p>خلاط كهربائي محمول ببطارية قوية.</p>
+        <button onclick="order('SmartBlend Pro')">اطلب الآن</button>
+    </div>
+
+    <!-- PRODUCT 2 -->
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1610440042657-612e978f9c24?w=600" />
+        <h4>UltraCut Slicer</h4>
+        <p>قطّاعة خضر متعددة الوظائف.</p>
+        <button onclick="order('UltraCut Slicer')">اطلب الآن</button>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600" />
+        <h4>AirBuds Max</h4>
+        <p>سماعات بلوتوث بجودة صوت ممتازة.</p>
+        <button onclick="order('AirBuds Max')">اطلب الآن</button>
+    </div>
+
+    <!-- PRODUCT 4 -->
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1598300055099-5b141bff19d0?w=600" />
+        <h4>GlowSkin Pro</h4>
+        <p>آلة تنظيف وترطيب البشرة.</p>
+        <button onclick="order('GlowSkin Pro')">اطلب الآن</button>
+    </div>
+
+    <!-- PRODUCT 5 -->
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600" />
+        <h4>FlexiBottle</h4>
+        <p>قارورة ماء قابلة للطي وسهلة الحمل.</p>
+        <button onclick="order('FlexiBottle')">اطلب الآن</button>
+    </div>
+
+    <!-- PRODUCT 6 -->
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" />
+        <h4>PowerWatch X</h4>
+        <p>ساعة ذكية متعددة الميزات.</p>
+        <button onclick="order('PowerWatch X')">اطلب الآن</button>
+    </div>
+
+</section>
+
+<!-- ORDER FORM -->
+<h3 class="section-title">نموذج الطلب</h3>
+<div id="orderForm">
+    <select id="product">
+        <option>اختر المنتج</option>
+    </select>
+    <input type="text" placeholder="الاسم الكامل">
+    <input type="text" placeholder="رقم الهاتف">
+    <input type="text" placeholder="المدينة">
+    <input type="text" placeholder="العنوان">
+    <button onclick="submitOrder()">إرسال الطلب</button>
+</div>
+
+<!-- CONTACT -->
+<section class="contact">
+    <h3 class="section-title">تواصل معنا</h3>
+    <a href="https://wa.me/+212715088120">واتساب</a>
+    <a href="#">إنستغرام</a>
+    <a href="mailto:example@mail.com">الإيميل</a>
+</section>
+
+<footer>
+    © 2026 Goood Store — جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
